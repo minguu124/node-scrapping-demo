@@ -1,42 +1,39 @@
-import {User} from "../models";
-
-
 // Rotas GET
-const getLogin =  (req , res) => {
-     res.render('page/login', {session: false});
-}
+const getLogin = (req, res) => {
+	res.render("page/login", { session: false });
+};
 
 const getRegister = (req, res) => {
-     res.render('page/register', {session: false});
-}
+	res.render("page/register", { session: false });
+};
 
 const getIndex = (req, res) => {
-     res.render('page');
-}
+	res.render("page");
+};
 
 const getAbout = (req, res) => {
-     res.render('page/about');
-}
+	res.render("page/about");
+};
 
 const getContact = (req, res) => {
-     res.render('page/contact');
-}
+	res.render("page/contact");
+};
 
 const getAuth = (req, res) => {
-     res.render('page/auth');
-}
+	res.render("page/auth");
+};
 
 const getLogout = (req, res) => {
-     req.logout();
-     res.redirect('/'); // ADD rota depois do logout
-}
+	req.logout();
+	res.redirect("/"); // ADD rota depois do logout
+};
 
-export default { 
-     getLogin, 
-     getRegister, 
-     getIndex, 
-     getAbout, 
-     getContact, 
-     getAuth, 
-     getLogout,
+export default {
+	getLogin,
+	getRegister,
+	getIndex,
+	getAbout,
+	getContact,
+	getAuth,
+	getLogout,
 };

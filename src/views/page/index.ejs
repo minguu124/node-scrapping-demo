@@ -1,12 +1,30 @@
-<section class="page-index">
+<section class="page-contact">
+	<h1>Contact</h1>
 
-    <div class="jumbotron">
-        <h1>Welcome!</h1>
-
-        <p class="lead">This is the template of the cofferHub organization, it is structured in the MVC standard and uses ESJ as the HTML rendering engine, Materializecss as the frontEnd framework and the ORM Sequelize.</p>
-
-        <p>It also has some features already configured like Multer and Passport</p>
-        
-    </div>
-
+	<div class="row">
+		<div class="col s12 m8 l6">
+			<form action="" method="post">
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea
+							id="body"
+							class="materialize-textarea"
+							name="body"
+							data-length="120"
+							required
+						></textarea>
+						<label for="body" class="grey-text text-darken-4">Body</label>
+					</div>
+				</div>
+				<div class="row">
+					<button
+						class="btn waves-effect waves-light col s12 btn-large blue-coffer-hub"
+						type="submit"
+					>
+						Submit
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </section>

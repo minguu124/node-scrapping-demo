@@ -1,28 +1,28 @@
-import {Router} from 'express';
-import UserController from '../controllers/UserController';
-import { 
-     isAuthenticated, 
-     isNotAuthenticated, 
-     authenticateLogin, 
-     authenticateRegister 
-} from '../config/auth';
+import { Router } from "express";
+import UserController from "../controllers/UserController";
+import ScrappingController from "../controllers/ScrappingController";
+
+import {
+	isAuthenticated,
+	isNotAuthenticated,
+	authenticateLogin,
+	authenticateRegister,
+} from "../config/auth";
 
 const router = Router();
 
-// Rotas Get
-router.get('/', UserController.getIndex);
-router.get('/about', UserController.getAbout);
-router.get('/contact', UserController.getContact);
+router.get("/", UserController.getIndex);
+router.get("/about", UserController.getAbout);
+router.get("/contact", UserController.getContact);
 
-router.get('/login', isNotAuthenticated, UserController.getLogin);
-router.get('/register', isNotAuthenticated, UserController.getRegister);
-router.get('/logout', UserController.getLogout);
+router.get("/login", isNotAuthenticated, UserController.getLogin);
+router.get("/register", isNotAuthenticated, UserController.getRegister);
+router.get("/logout", UserController.getLogout);
 
-// Rota autenticada
-router.get('/auth', isAuthenticated, UserController.getAuth);
+router.get("/auth", isAuthenticated, UserController.getAuth);
 
-// Rotas Post
-router.post('/register', authenticateRegister);
-router.post('/login', authenticateLogin);
+router.post("/register", authenticateRegister);
+router.post("/login", authenticateLogin);
+router.post("", ScrappingController.onScrapping);
 
 export default router;
